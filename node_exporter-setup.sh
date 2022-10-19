@@ -16,7 +16,7 @@ sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
 
 # --------------- create a service file for prometheus -----------------------
 echo "creating service file for node_exporter"
-touch node_exporter.service
+touch node-exporter.service
 read -r -d '' NODE_EXPORTER_SERVICE_CONFIG << EOM
 [Unit]
 Description=Prometheus Node Exporter Service
@@ -31,8 +31,8 @@ ExecStart=/usr/local/bin/node_exporter
 [Install]
 WantedBy=multi-user.target
 EOM
-sudo echo "$NODE_EXPORTER_SERVICE_CONFIG" >> node_exporter.service
-sudo cp node_exporter.service /etc/systemd/system/node_exporter.service
+sudo echo "$NODE_EXPORTER_SERVICE_CONFIG" >> node-exporter.service
+sudo cp node-exporter.service /etc/systemd/system/node_exporter.service
 rm node_exporter.service
 echo "service file created for node_exporter"
 
