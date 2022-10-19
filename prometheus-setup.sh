@@ -38,7 +38,7 @@ global:
 scrape_configs:
   - job_name: 'prometheus'
     static_configs:
-      - targets: [$PROMETHEUS_HOST:$PROMETHEUS_METRICS_PORT]
+      - targets: [$PROMETHEUS_HOST:$PROMETHEUS_PORT]
 EOM
 
 sudo echo "$PROMETHEUS_BASIC_CONFIG" >> prometheus.yml
