@@ -32,8 +32,8 @@ ExecStart=/usr/local/bin/node_exporter
 WantedBy=multi-user.target
 EOM
 sudo echo "$NODE_EXPORTER_SERVICE_CONFIG" >> node-exporter.service
-sudo cp node-exporter.service /etc/systemd/system/node_exporter.service
-rm node_exporter.service
+sudo cp node-exporter.service /etc/systemd/system/node-exporter.service
+rm node-exporter.service
 echo "service file created for node_exporter"
 
 # -------------- starting the node_exporter daemon -------------------
